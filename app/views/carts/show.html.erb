@@ -1,3 +1,4 @@
+<% if enhanced_cart.count > 0 %>
 <section class="cart-show">
 
   <header class="page-header">
@@ -31,7 +32,7 @@
       </tfoot>
     </table>
   </div>
-
+  <p align=center>
   <div class="row">
     <div class="col-xs-12">
       <%= form_tag orders_path do %>
@@ -50,3 +51,9 @@
   </div>
 
 </section>
+<% else %>
+   <div class="alert alert-info" role="alert">
+   Looks like your cart is empty! You should go back and add something!
+  </div>
+  <p align=center><%= link_to "Back to Catalog", root_path %></p>
+<% end %>
