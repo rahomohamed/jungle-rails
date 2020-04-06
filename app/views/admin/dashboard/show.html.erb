@@ -1,2 +1,8 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to "Categories", root_path %></li>
+    <li class="breadcrumb-item"><%= link_to "Products", "admin/products#index" %></li>
+    <li class="breadcrumb-item active" aria-current="page">DashBoard</li>
+  </ol>
+</nav>
+<h1>There are <%=@products_count %> types products <%=@products_quantity%> in total in <%= @categories %> catagories</h1>
