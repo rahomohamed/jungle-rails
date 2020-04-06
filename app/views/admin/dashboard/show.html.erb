@@ -2,7 +2,21 @@
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><%= link_to "Categories", root_path %></li>
     <li class="breadcrumb-item"><%= link_to "Products", "admin/products#index" %></li>
-    <li class="breadcrumb-item active" aria-current="page">DashBoard</li>
+    <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
   </ol>
 </nav>
-<h1>There are <%=@products_count %> types products <%=@products_quantity%> in total in <%= @categories %> catagories</h1>
+
+<ul class="list-group">
+  <li class="list-group-item">
+    <span class="badge"> <%=@products_quantity%> </span>
+    Products
+    </li>
+    <li class="list-group-item">
+    <span class="badge"> <%=@category_count%> </span>
+    Categories
+    </li>
+</ul>
+
+<div class="alert alert-info" role="alert">
+There are <%=@products_quantity%> items in our store in <%= @category_count %> catagories.
+</div>
