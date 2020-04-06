@@ -1,0 +1,10 @@
+<% @line_items.each do |line_item| %>
+  <tr>
+    <td><%= image_tag line_item.product.image.tiny %></td>
+    <th scope="row"><%= line_item.product.name %></th>
+    <td><%= line_item.product.description %></td>
+    <td style="text-align: right"><%= line_item.quantity %></td>
+    <td style="text-align: right"><%= humanized_money_with_symbol line_item.product.price %></td>
+    <td style="text-align: right"><%= humanized_money_with_symbol line_item.product.price * line_item.quantity %></td>
+  </tr>
+<% end %>
