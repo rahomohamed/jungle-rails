@@ -20,7 +20,8 @@ RSpec.describe User, type: :model do
 
     it "is invalid when password is less than 3 characters" do
       user = User.create(name: "Raho", email: "raho@gmail.com", password: "12")
-      expect(user.errors.full_messages.first).to eq "Password must be minimum 3 characters"
+      puts user.errors.full_messages.first
+      expect(user.errors.full_messages.first).to eq "Password is too short (minimum is 3 characters)"
     end
 
     it "is invalid when email is not set" do
@@ -36,15 +37,16 @@ RSpec.describe User, type: :model do
 
     it "it should have a valid name" do
       user = User.create(email: "raho@gmail.com", password: "123")
-      expect(user.errors.full_messages.first).to eq "Name cannot be blank"
+      puts (user.errors.full_messages.first)
+      expect(user.errors.full_messages.first).to eq "Name can't be blank"
     end
   end
 
   describe '.authenticate_with_credentials' do
     it "logs in successfully with correct credentials" do
-      registerUser = User.create(name: "Raho", email: "raho@gmail.com", password: "123", password_confirmation: "123")
-      loginUser = User.authenticate_with_credentials("raho@gmail.com", "123")
-      expect(loginUser).to_not be nil
+      register = User.create(name: "Raho", email: "raho@gmail.com", password: "123", password_confirmation: "123")
+      login = User.authenticate_with_credentials("raho@gmail.com", "123")
+      expect(login).to_not be nil
     end
 
     it 'does not login with non existent email' do
