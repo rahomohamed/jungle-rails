@@ -2,7 +2,6 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
-
 ## Setup
 
 1. Run `bundle install` to install dependencies
@@ -25,3 +24,9 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 * PostgreSQL 9.x
 * Stripe
+
+## Screenshots 
+!["Screenshot of homepage"](https://github.com/rahomohamed/jungle-rails/blob/master/docs/homepage.png)
+!["Screenshot of authenticating user"](https://github.com/rahomohamed/jungle-rails/blob/master/docs/authenticate.png)
+!["Screenshot of categories page"](https://github.com/rahomohamed/jungle-rails/blob/master/docs/categories.png)
+!["Screenshot of products page"](https://github.com/rahomohamed/jungle-rails/blob/master/docs/products.png)
